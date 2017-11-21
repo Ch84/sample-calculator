@@ -25,7 +25,7 @@ public class CalculatorTest {
 			result = firstNumber + secondNumber;
 			
 			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
-			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result),1);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 			
 		}
 
@@ -42,7 +42,7 @@ public class CalculatorTest {
 				result = firstNumber + secondNumber;
 				
 				LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber);
-				assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 2);
+				assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 			}
 			
 }
@@ -58,9 +58,23 @@ public class CalculatorTest {
 					result = firstNumber + secondNumber;
 					
 					LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber);
-					assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 3);
+					assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 				}
-			}
+				
+}
+				public void testAddZeroSizedPositiveNumbers() {
+					double firstNumber = 0;
+					double secondNumber = 0;
+					double result = 0;
+					
+					firstNumber = Double.valueOf(df.format(0));
+					secondNumber = Double.valueOf(df.format(0));
+					result = firstNumber + secondNumber;
+					
+					LOG.info("Testing the method add with: " + firstNumber + " and " + secondNumber);
+					assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
+				}
+		
 			
 		
 		
