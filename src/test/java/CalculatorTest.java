@@ -87,7 +87,7 @@ public class CalculatorTest {
 					
 				}
 				@Test
-				public void TestAddSmallNegativeNumbers() {
+				public void testAddSmallNegativeNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -103,7 +103,7 @@ public class CalculatorTest {
 					
 				}
 				@Test
-				public void TestAddMediumNegativeNumbers() {
+				public void testAddMediumNegativeNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -120,7 +120,7 @@ public class CalculatorTest {
 					
 				}
 				@Test
-				public void TestAddLargeNegativeNumbers() {
+				public void testAddLargeNegativeNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -136,7 +136,7 @@ public class CalculatorTest {
 					
 				}
 				@Test
-				public void TestSubtractSmallPositiveNumbers() {
+				public void testSubtractSmallPositiveNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -152,7 +152,7 @@ public class CalculatorTest {
 					
 				}
 				@Test
-				public void TestSubtractMediumPositiveNumbers() {
+				public void testSubtractMediumPositiveNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -168,7 +168,7 @@ public class CalculatorTest {
 					
 				}
 				@Test
-				public void TestSubtractLargePositiveNumbers() {
+				public void testSubtractLargePositiveNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -185,7 +185,7 @@ public class CalculatorTest {
 				
 			}
 			@Test
-			public void TestSubtractZeros() {
+			public void testSubtractZeros() {
 				double firstNumber = 0;
 				double secondNumber = 0;
 				double result = 0;
@@ -212,7 +212,7 @@ public class CalculatorTest {
 				
 			}
 			@Test
-			public void TestSubtractSmallNegativeNumbers() {
+			public void testSubtractSmallNegativeNumbers() {
 				double firstNumber = 0;
 				double secondNumber = 0;
 				double result = 0;
@@ -229,7 +229,7 @@ public class CalculatorTest {
 				
 			}
 			@Test
-			public void TestSubtractMediumNegativeNumbers() {
+			public void testSubtractMediumNegativeNumbers() {
 				double firstNumber = 0;
 				double secondNumber = 0;
 				double result = 0;
@@ -246,7 +246,7 @@ public class CalculatorTest {
 				
 				}
 				@Test
-				public void TestSubtractLargeNegativeNumbers() {
+				public void testSubtractLargeNegativeNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -263,7 +263,7 @@ public class CalculatorTest {
 					
 				}
 				@Test
-				public void TestMultiplySmallPositiveNumbers() {
+				public void testMultiplySmallPositiveNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -279,7 +279,7 @@ public class CalculatorTest {
 					
 				}
 				@Test
-				public void TestMultiplyMediumPositiveNumbers() {
+				public void testMultiplyMediumPositiveNumbers() {
 					double firstNumber = 0;
 					double secondNumber = 0;
 					double result = 0;
@@ -296,7 +296,7 @@ public class CalculatorTest {
 					
 				}
 					@Test
-					public void TestMultiplyLargePositiveNumbers() {
+					public void testMultiplyLargePositiveNumbers() {
 						double firstNumber = 0;
 						double secondNumber = 0;
 						double result = 0;
@@ -313,7 +313,7 @@ public class CalculatorTest {
 						
 					}
 					@Test
-					public void TestMultiplyZeros() {
+					public void testMultiplyZeros() {
 						double firstNumber = 0;
 						double secondNumber = 0;
 						double result = 0;
@@ -339,8 +339,24 @@ public class CalculatorTest {
 						}
 						
 					}
-
-					
+					@Test
+					public void testMultiplySmallNegativeNumbers() {
+						double firstNumber = 0;
+						double secondNumber = 0;
+						double result = 0;
+						
+						for (int k=0; k<200; k++) {
+							firstNumber = Double.valueOf(df.format(random.nextDouble()*-10));
+							secondNumber = Double.valueOf(df.format(random.nextDouble()*-10));
+							result = firstNumber * secondNumber;
+							
+							LOG.info("Testing the method multiply with: " + firstNumber + " and " + secondNumber);
+							assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result), 1);
+							
+						}
+						
+					}
+				
 				}
 				
 			
