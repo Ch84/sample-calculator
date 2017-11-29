@@ -134,11 +134,28 @@ public class CalculatorTest {
 						assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 					}
 					
+				}
+				@Test
+				public void TestSubtractSmallPositiveNumbers() {
+					double firstNumber = 0;
+					double secondNumber = 0;
+					double result = 0;
+					
+					for (int k=0; k<200; k++) {
+						firstNumber = Double.valueOf(df.format(random.nextDouble()*10));
+						secondNumber = Double.valueOf(df.format(random.nextDouble()*10));
+						result = firstNumber - secondNumber;
+						
+						LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber);
+						assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+					}
 						
 					}
 						
 				}
-					
+						
+				
+				
 						
 					
 
