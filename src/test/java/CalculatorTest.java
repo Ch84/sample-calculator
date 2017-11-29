@@ -211,6 +211,57 @@ public class CalculatorTest {
 				}
 				
 			}
+			@Test
+			public void TestSubtractSmallNegativeNumbers() {
+				double firstNumber = 0;
+				double secondNumber = 0;
+				double result = 0;
+				
+				for (int k=0; k<200; k++) {
+					firstNumber = Double.valueOf(df.format(random.nextDouble()*-10));
+					secondNumber = Double.valueOf(df.format(random.nextDouble()*-10));
+					result = firstNumber - secondNumber;
+					
+					LOG.info("Testing the method subtract with: " + firstNumber + "and " + secondNumber);
+					assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+					
+				}
+				
+			}
+			@Test
+			public void TestSubtractMediumNegativeNumbers() {
+				double firstNumber = 0;
+				double secondNumber = 0;
+				double result = 0;
+				
+				for (int k=0; k<200; k++) {
+					firstNumber = Double.valueOf(df.format(random.nextDouble()*-100));
+					secondNumber = Double.valueOf(df.format(random.nextDouble()*-100));
+					result = firstNumber - secondNumber;
+					
+					LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber);
+					assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+					
+					}
+				
+				}
+				@Test
+				public void TestSubtractLargeNegativeNumbers() {
+					double firstNumber = 0;
+					double secondNumber = 0;
+					double result = 0;
+					
+					for (int k=0; k<200; k++) {
+						firstNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+						secondNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+						result = firstNumber - secondNumber;
+						
+						LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber);
+						assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+						
+					}
+				
+			}
 			
 }
 						
