@@ -293,11 +293,31 @@ public class CalculatorTest {
 						assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result), 1);
 						
 					}
+					
+				}
+					@Test
+					public void TestMultiplyLargePositiveNumbers() {
+						double firstNumber = 0;
+						double secondNumber = 0;
+						double result = 0;
+						
+						for (int k=0; k<200; k++) {
+							firstNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+							secondNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+							result = firstNumber * secondNumber;
+							
+							LOG.info("Testing the method multiply with: "  + firstNumber + " and " + secondNumber);
+							assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result), 1);
+							
+						}
+						
+					}
+					
+				}
 				
-				
-			}
 			
-}
+		
+
 						
 
 						
