@@ -149,10 +149,28 @@ public class CalculatorTest {
 						LOG.info("Testing the method subtract with: " + firstNumber + " and " + secondNumber);
 						assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
 					}
+					
+				}
+				@Test
+				public void TestSubtractMediumPositiveNumbers() {
+					double firstNumber = 0;
+					double secondNumber = 0;
+					double result = 0;
+					
+					for (int k=0; k<200; k++) {
+						firstNumber = Double.valueOf(df.format(random.nextDouble()*100));
+						secondNumber = Double.valueOf(df.format(random.nextDouble()*100));
+						result = firstNumber - secondNumber;
 						
+						LOG.info("Testing the method subract with: " + firstNumber + " and " + secondNumber);
+						assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
 					}
 						
 				}
+						
+}
+						
+				
 						
 				
 				
