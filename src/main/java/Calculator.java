@@ -53,15 +53,12 @@ public class Calculator {
 	 * @return: the result of the division.
 	 * */
 	public double divide(double firstNumber, double secondNumber){
-		double sum = 0;
 		
-		if (secondNumber != 0) {
-			sum = firstNumber/secondNumber;
-		} else {
-			System.out.println("Division by zero is not possible, gives the result: " + sum);
-			sum = -0.123456789;
+		if (secondNumber == 0) {
+			System.out.println("Division by zero");
+			return -0.123456789;
 		}
-		return sum;
+		return firstNumber / secondNumber;
 	}
 	
 	

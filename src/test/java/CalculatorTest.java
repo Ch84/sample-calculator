@@ -440,7 +440,32 @@ public class CalculatorTest {
 						}
 				 
 					}
-	
+					@Test
+					public void testDivideZeros() {
+						double firstNumber = 0;
+						double secondNumber = 0;
+						double result = -0.123456789;
+						
+						LOG.info("Testing the method divide with: " + firstNumber + " and " + secondNumber);
+						assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
+						
+						for (int k=0; k<200; k++) {
+							firstNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+							secondNumber = 0;
+							result = -0.123456789;
+							
+							LOG.info("Testing the method divide with: " + firstNumber + " and " + secondNumber);
+							assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
+							
+							firstNumber = 0;
+							secondNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+							result = firstNumber / secondNumber;
+						
+							LOG.info("Testing the method divide with: " + firstNumber + " and " + secondNumber);
+							assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
+							
+						}
+					}
 				}
 				
 				
